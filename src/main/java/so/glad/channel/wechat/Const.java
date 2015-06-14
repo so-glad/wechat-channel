@@ -6,6 +6,11 @@ package so.glad.channel.wechat;
  */
 public interface Const {
 
+    interface MESSAGE_KEY {
+        String MESSAGE_TYPE = "MsgType";
+        String CONTENT = "Content";
+    }
+
     interface RS_MSG_TYPE {
 
         String TEXT = "text";
@@ -51,5 +56,12 @@ public interface Const {
         String SNSAPI_BASE = "snsapi_base";
 
         String SNSAPI_USERINFO = "snsapi_userinfo";
+    }
+
+    interface QR_ACTION_NAME {
+
+        String QR_SCENE = "QR_SCENE";
+
+        String QR_LIMIT_SCENE = "QR_LIMIT_SCENE";
     }
 }
