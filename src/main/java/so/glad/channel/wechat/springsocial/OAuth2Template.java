@@ -36,7 +36,7 @@ public class OAuth2Template implements OAuth2Operations {
 
     private final String appSecret;
 
-    private final String accessTokenUrl = null;
+    private final String accessTokenUrl;
 
     private final String authorizeUrl = null;
 
@@ -60,7 +60,7 @@ public class OAuth2Template implements OAuth2Operations {
         } else {
             this.authenticateUrl = null;
         }
-//        this.accessTokenUrl = Configure.getProperty(Const.ConfigKey.CLOUD_URL) + Configure.getProperty(Const.ConfigKey.ACT_USER_TOKEN);
+        this.accessTokenUrl = Configure.getProperty(Const.ConfigKey.URL_TOKEN);
     }
 
     @Override
@@ -147,9 +147,8 @@ public class OAuth2Template implements OAuth2Operations {
 
     private String buildAuthUrl(String baseAuthUrl, GrantType grantType, OAuth2Parameters parameters) {
         //https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
-        StringBuilder authUrl = new StringBuilder(baseAuthUrl);
-        Long timestamp = dateUtil.now().getTime();
-        String source = "appKey=" + appKey + "&timestamp=" + timestamp;
+        StringBuilder authUrl = new StringBuilder(baseAuthUrl + "?grant_type=");
+        String source = "appKey=" + appKey;
         //String signature =  CodecUtil.hmacsha1(source, appSecret);
         //authUrl.append("&timestamp=").append(timestamp).append("&appSignature=").append(signature);
         if (grantType == GrantType.AUTHORIZATION_CODE) {

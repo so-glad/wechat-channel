@@ -14,7 +14,7 @@ public interface Const {
     }
 
     interface ConfigKey {
-
+        String URL_TOKEN = "url.token";
     }
 
     interface RS_MSG_TYPE {
