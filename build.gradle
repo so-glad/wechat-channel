@@ -29,13 +29,14 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 dependencies {
     compile("org.apache.commons:commons-io:1.3.2")
     compile("org.apache.commons:commons-lang3:3.3.2")
+    compile("commons-codec:commons-codec:1.9")
     compile("org.slf4j:slf4j-api:1.7.12")
     compile("com.google.guava:guava:18.0")
     compile("so.glad:soglad-channel:1.0")
     testCompile("org.slf4j:slf4j-log4j12:1.7.12")
     testCompile("log4j:log4j:1.2.17")
     testCompile("org.jmockit:jmockit:1.16")
-    testCompile("junit:junit:4.11")
+    testCompile("junit:junit:4.12")
 }
 
 publishing {
