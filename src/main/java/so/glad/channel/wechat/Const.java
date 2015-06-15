@@ -6,9 +6,15 @@ package so.glad.channel.wechat;
  */
 public interface Const {
 
+    String DEFAULT_ENCODING = "UTF-8";
+
     interface MESSAGE_KEY {
         String MESSAGE_TYPE = "MsgType";
         String CONTENT = "Content";
+    }
+
+    interface ConfigKey {
+
     }
 
     interface RS_MSG_TYPE {
