@@ -19,7 +19,7 @@ public class Configure {
             confProps.load(Configure.class.getResourceAsStream("/wechat/config.properties"));
         }
         catch (Exception ex) {
-            log.warn("Load Edrive Config file failed.", ex);
+            log.warn("Load WeChat Config file failed.", ex);
         }
     }
 
