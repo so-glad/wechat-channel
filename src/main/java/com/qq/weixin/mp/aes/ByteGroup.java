@@ -1,9 +1,12 @@
 package com.qq.weixin.mp.aes;
 
-import java.util.ArrayList;
+import java.util.List;
+import com.google.common.collect.Lists;
+
 
 class ByteGroup {
-	ArrayList<Byte> byteContainer = new ArrayList<Byte>();
+
+	private List<Byte> byteContainer = Lists.newArrayList();
 
 	public byte[] toBytes() {
 		byte[] bytes = new byte[byteContainer.size()];

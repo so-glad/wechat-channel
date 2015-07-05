@@ -15,8 +15,10 @@ import java.util.Arrays;
  * 提供基于PKCS7算法的加解密接口.
  */
 class PKCS7Encoder {
+
 	static Charset CHARSET = Charset.forName("utf-8");
-	static int BLOCK_SIZE = 32;
+
+    static int BLOCK_SIZE = 32;
 
 	/**
 	 * 获得对明文进行补位填充的字节.
@@ -32,7 +34,7 @@ class PKCS7Encoder {
 		}
 		// 获得补位所用的字符
 		char padChr = chr(amountToPad);
-		String tmp = new String();
+		String tmp = "";
 		for (int index = 0; index < amountToPad; index++) {
 			tmp += padChr;
 		}

@@ -22,6 +22,7 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 提供接收和推送给公众平台消息的加解密接口(UTF8编码的字符串).
@@ -39,6 +40,7 @@ import org.apache.commons.codec.binary.Base64;
  * </ol>
  */
 public class WXBizMsgCrypt {
+
 	static Charset CHARSET = Charset.forName("utf-8");
 	Base64 base64 = new Base64();
 	byte[] aesKey;
@@ -87,7 +89,7 @@ public class WXBizMsgCrypt {
 	String getRandomStr() {
 		String base = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 		Random random = new Random();
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < 16; i++) {
 			int number = random.nextInt(base.length());
 			sb.append(base.charAt(number));
@@ -133,9 +135,7 @@ public class WXBizMsgCrypt {
 			byte[] encrypted = cipher.doFinal(unencrypted);
 
 			// 使用BASE64对加密后的字符串进行编码
-			String base64Encrypted = base64.encodeToString(encrypted);
-
-			return base64Encrypted;
+            return base64.encodeToString(encrypted);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new AesException(AesException.EncryptAESError);
@@ -214,7 +214,7 @@ public class WXBizMsgCrypt {
 		String encrypt = encrypt(getRandomStr(), replyMsg);
 
 		// 生成安全签名
-		if (timeStamp == "") {
+		if (StringUtils.isBlank(timeStamp)) {
 			timeStamp = Long.toString(System.currentTimeMillis());
 		}
 
@@ -222,8 +222,7 @@ public class WXBizMsgCrypt {
 
 		// System.out.println("发送给平台的签名是: " + signature[1].toString());
 		// 生成发送的xml
-		String result = XMLParse.generate(encrypt, signature, timeStamp, nonce);
-		return result;
+        return XMLParse.generate(encrypt, signature, timeStamp, nonce);
 	}
 
 	/**
@@ -260,8 +259,7 @@ public class WXBizMsgCrypt {
 		}
 
 		// 解密
-		String result = decrypt(encrypt[1].toString());
-		return result;
+        return decrypt(encrypt[1].toString());
 	}
 
 	/**

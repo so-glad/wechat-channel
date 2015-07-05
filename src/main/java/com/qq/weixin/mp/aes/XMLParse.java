@@ -41,11 +41,11 @@ class XMLParse {
 			Document document = db.parse(is);
 
 			Element root = document.getDocumentElement();
-			NodeList nodelist1 = root.getElementsByTagName("Encrypt");
-			NodeList nodelist2 = root.getElementsByTagName("ToUserName");
+			NodeList encryptNodes = root.getElementsByTagName("Encrypt");
+			NodeList toUserNameNodes = root.getElementsByTagName("ToUserName");
 			result[0] = 0;
-			result[1] = nodelist1.item(0).getTextContent();
-			result[2] = nodelist2.item(0).getTextContent();
+			result[1] = encryptNodes.item(0).getTextContent();
+			result[2] = toUserNameNodes.item(0).getTextContent();
 			return result;
 		} catch (Exception e) {
 			e.printStackTrace();

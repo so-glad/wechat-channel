@@ -38,10 +38,6 @@ dependencies {
     compile("org.springframework.social:spring-social-security:1.1.2.RELEASE")
     compile("com.fasterxml.jackson.core:jackson-core:2.5.4")
     compile("com.fasterxml.jackson.core:jackson-databind:2.5.4")
-    compile("org.jibx:jibx-run:1.2.6")
-    jibx "org.jibx:jibx-bind:1.2.6"
-    jibx "org.jibx:jibx-tools:1.2.6"
-    jibx "org.apache.bcel:bcel:6.0-SNAPSHOT"
     testCompile("org.slf4j:slf4j-log4j12:1.7.12")
     testCompile("log4j:log4j:1.2.17")
     testCompile("org.jmockit:jmockit:1.16")
@@ -73,21 +69,6 @@ publishing {
             credentials {
                 username "${PUBLISH_USERNAME}"
                 password "${PUBLISH_PASSWORD}"
-            }
-        }
-    }
-}
-
-classes.doLast {
-    ant {
-        taskdef(name: 'bind',
-                classname: 'org.jibx.binding.ant.CompileTask',
-                classpath: configurations.jibx.asPath
-        )
-
-        bind(binding: "${projectDir}/build/resources/main/edrive/jibx_entity.xml", verbose: 'false') {
-            classpath {
-                pathelement(path: "${projectDir}/build/classes/main")
             }
         }
     }
