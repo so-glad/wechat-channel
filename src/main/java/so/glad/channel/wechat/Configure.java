@@ -13,6 +13,8 @@ public class Configure {
 
     private final static Properties confProps = new Properties();
 
+    private static String accessToken;
+
     static {
         Logger log = LoggerFactory.getLogger(Configure.class);
         try {
@@ -21,6 +23,14 @@ public class Configure {
         catch (Exception ex) {
             log.warn("Load WeChat Config file failed.", ex);
         }
+    }
+
+    public static void updateAccessToken(String accessToken){
+        Configure.accessToken = accessToken;
+    }
+
+    public static String getAccessToken(){
+        return Configure.accessToken;
     }
 
     public static String getProperty(String entry) {

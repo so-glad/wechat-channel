@@ -10,7 +10,6 @@ public class QRCode {
 
     private String expireSeconds;
 
-
     private String actionName;
 
     private String actionInfo;
@@ -80,6 +79,7 @@ public class QRCode {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(expireSeconds, actionName, actionInfo, sceneId, ticket);
+        return Objects.hashCode(expireSeconds, actionName,
+                actionInfo, sceneId, ticket);
     }
 }
