@@ -51,6 +51,9 @@ public interface Const {
         String OAUTH_TOKEN_VALID = "oauth.token.valid";
 
         String TOKEN_ACHIEVE = "token.achieve";
+        String MENU_CREATE = "menu.create";
+        String MENU_QUERY = "menu.get";
+        String MENU_DELETE = "menu.delete";
 
     }
 

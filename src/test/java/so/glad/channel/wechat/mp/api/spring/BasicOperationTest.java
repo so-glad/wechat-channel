@@ -1,14 +1,15 @@
 package so.glad.channel.wechat.mp.api.spring;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.social.support.ClientHttpRequestFactorySelector;
 import org.springframework.web.client.RestTemplate;
 import so.glad.channel.wechat.model.AccessToken;
 import so.glad.channel.wechat.mp.api.BasicOperation;
@@ -32,7 +33,10 @@ public class BasicOperationTest {
     @Test
     public void test(){
         AccessToken accessToken =
-                basicOperation.archieveAccessToken("wx9dc43bc21ace677c","d81b88a0f4b4750394100a301c1dab4a");
+                basicOperation.archieveAccessToken("wxa58d567a5964cc2a","056fe9c2213563d03da0f9440a360db1");
+        Assert.assertTrue(StringUtils.isNotBlank(accessToken.getToken()));
+        Assert.assertTrue(accessToken.getExpiresIn() > 0);
+        System.out.print(accessToken.getToken());
     }
 
     private RestTemplate createSSLRestTemplate(){
