@@ -2,6 +2,8 @@ package so.glad.channel.wechat.model.message;
 
 import com.google.common.base.Objects;
 
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * @author palmtale
  *         on 15/6/15.
@@ -11,7 +13,7 @@ public class WechatMessage extends Message {
     private String fromUser;
 
     private Long createTime;
-
+    @XmlElement(name = "FromUserName")
     public String getFromUser() {
         return fromUser;
     }
@@ -19,7 +21,7 @@ public class WechatMessage extends Message {
     public void setFromUser(String fromUser) {
         this.fromUser = fromUser;
     }
-
+    @XmlElement(name = "CreateTime")
     public Long getCreateTime() {
         return createTime;
     }

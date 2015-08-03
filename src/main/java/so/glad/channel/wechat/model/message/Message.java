@@ -2,6 +2,8 @@ package so.glad.channel.wechat.model.message;
 
 import com.google.common.base.Objects;
 
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * @author palmtale
  *         on 15/6/15.
@@ -11,7 +13,7 @@ public abstract class Message {
     private String toUser;
 
     private String msgType;
-
+    @XmlElement(name = "ToUserName")
     public String getToUser() {
         return toUser;
     }
@@ -19,7 +21,7 @@ public abstract class Message {
     public void setToUser(String toUser) {
         this.toUser = toUser;
     }
-
+    @XmlElement(name = "MsgType")
     public String getMsgType() {
         return msgType;
     }

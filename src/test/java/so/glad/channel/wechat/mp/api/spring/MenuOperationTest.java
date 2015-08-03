@@ -19,7 +19,7 @@ public class MenuOperationTest {
 
     @Before
     public void prepare(){
-        Configure.updateAccessToken("Np2fZLPbcLwZc-CfP2IDLJrS6tk8kuhsRRiNxRRXOB1BviCHpLxpQhEVgNo3NTGRRPI7pdL9XM93dFPgY5UMItyMcMdhdVMTf9vb-xftBBA");
+        Configure.updateAccessToken("_rA3-Qhd1D_l8_0ZMuq2FAyT0L5Kz19oOS-yCyifFIueTND3-OCbtgt0Q_n65wItfyfYOsmmCLuGzHsDa4XbdL2qBxDoJpCOM9MFVxpAEdQ");
         MenuOperationSpring menuOperation = new MenuOperationSpring();
         menuOperation.setRestTemplate(new RestTemplate());
         this.menuOperation = menuOperation;
@@ -42,19 +42,19 @@ public class MenuOperationTest {
         menuButton.getSubButtons().add(new MenuButton());
         menuButton.getSubButtons().get(0).setType("view");
         menuButton.getSubButtons().get(0).setName("喵症查询");
-        menuButton.getSubButtons().get(0).setUrl("http://zhi.zunbao.in");
+        menuButton.getSubButtons().get(0).setUrl("http://zhi.zunbao.in/#/index/wiki_category3/4");
         menuButton.getSubButtons().add(new MenuButton());
         menuButton.getSubButtons().get(1).setType("view");
         menuButton.getSubButtons().get(1).setName("汪症查询");
-        menuButton.getSubButtons().get(1).setUrl("http://zhi.zunbao.in");
+        menuButton.getSubButtons().get(1).setUrl("http://zhi.zunbao.in/#/index/wiki_category3/3");
         menuButton.getSubButtons().add(new MenuButton());
         menuButton.getSubButtons().get(2).setType("view");
         menuButton.getSubButtons().get(2).setName("喵药指南");
-        menuButton.getSubButtons().get(2).setUrl("http://zhi.zunbao.in");
+        menuButton.getSubButtons().get(2).setUrl("http://zhi.zunbao.in/#/index/wiki_category3/6");
         menuButton.getSubButtons().add(new MenuButton());
         menuButton.getSubButtons().get(3).setType("view");
         menuButton.getSubButtons().get(3).setName("汪药指南");
-        menuButton.getSubButtons().get(3).setUrl("http://zhi.zunbao.in");
+        menuButton.getSubButtons().get(3).setUrl("http://zhi.zunbao.in/#/index/wiki_category3/5");
         menuButton.getSubButtons().add(new MenuButton());
         menuButton.getSubButtons().get(4).setType("view");
         menuButton.getSubButtons().get(4).setName("御宠园");
@@ -65,7 +65,7 @@ public class MenuOperationTest {
         menuButton = new MenuButton();
         menuButton.setName("治尊服务");
         menuButton.setType("view");
-        menuButton.setUrl("http://zhi.zunbao.in");
+        menuButton.setUrl("http://zhi.zunbao.in/admin/index.html");
         menu.getButton().add(menuButton);
         menuOperation.createMenu(menu);
     }

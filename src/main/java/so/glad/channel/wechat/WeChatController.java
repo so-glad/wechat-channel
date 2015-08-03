@@ -9,7 +9,7 @@ import java.util.Map;
  * @author palmtale
  *         on 15/6/14.
  */
-public class WeChatController {
+public abstract class WeChatController {
 
     private String token;
 
@@ -25,14 +25,4 @@ public class WeChatController {
         }
     }
 
-    public String post(InputStream inputStream) {
-        String respMessage = null;
-        Map<String, String> messageMap = unmarshell(inputStream);
-        String msgType = messageMap.get(Const.MESSAGE_KEY.MESSAGE_TYPE);
-        return respMessage;
-    }
-
-    private Map<String, String> unmarshell(InputStream inputStream) {
-        return null;
-    }
 }
