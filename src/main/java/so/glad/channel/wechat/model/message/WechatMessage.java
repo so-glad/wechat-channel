@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
  * @author palmtale
  *         on 15/6/15.
  */
-public class WechatMessage extends Message {
+public abstract class WechatMessage extends Message {
 
     private String fromUser;
 

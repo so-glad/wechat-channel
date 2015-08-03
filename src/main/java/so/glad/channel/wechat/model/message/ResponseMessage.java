@@ -2,14 +2,18 @@ package so.glad.channel.wechat.model.message;
 
 import com.google.common.base.Objects;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * @author palmtale
  *         on 15/6/15.
  */
-public abstract class ResponseMessage extends WechatMessage {
+@XmlRootElement(name = "xml")
+public class ResponseMessage extends WechatMessage {
 
     private Integer funcFlag;
-
+    @XmlElement(name = "FuncFlag")
     public Integer getFuncFlag() {
         return funcFlag;
     }
