@@ -1,6 +1,7 @@
 package so.glad.channel.wechat.model.message;
 
 import com.google.common.base.Objects;
+import org.eclipse.persistence.oxm.annotations.XmlCDATA;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -14,6 +15,7 @@ public abstract class Message {
 
     private String msgType;
     @XmlElement(name = "ToUserName")
+    @XmlCDATA
     public String getToUser() {
         return toUser;
     }
@@ -22,6 +24,7 @@ public abstract class Message {
         this.toUser = toUser;
     }
     @XmlElement(name = "MsgType")
+    @XmlCDATA
     public String getMsgType() {
         return msgType;
     }

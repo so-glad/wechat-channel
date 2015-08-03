@@ -8,6 +8,9 @@ version = '1.0.0-SNAPSHOT'
 
 repositories {
     maven {
+        url "https://repo1.maven.org/maven2/"
+    }
+    maven {
         url "http://gear.glad.so/nexus/content/groups/public/"
     }
 }
@@ -39,6 +42,7 @@ dependencies {
     compile("org.springframework.social:spring-social-security:1.1.2.RELEASE")
     compile("com.fasterxml.jackson.core:jackson-core:2.5.4")
     compile("com.fasterxml.jackson.core:jackson-databind:2.5.4")
+    compile("org.eclipse.persistence:org.eclipse.persistence.moxy:2.6.0")
     testCompile("org.slf4j:slf4j-log4j12:1.7.12")
     testCompile("log4j:log4j:1.2.17")
     testCompile("org.jmockit:jmockit:1.16")

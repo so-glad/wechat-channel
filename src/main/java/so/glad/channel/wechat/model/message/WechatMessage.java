@@ -1,6 +1,7 @@
 package so.glad.channel.wechat.model.message;
 
 import com.google.common.base.Objects;
+import org.eclipse.persistence.oxm.annotations.XmlCDATA;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -14,6 +15,7 @@ public abstract class WechatMessage extends Message {
 
     private Long createTime;
     @XmlElement(name = "FromUserName")
+    @XmlCDATA
     public String getFromUser() {
         return fromUser;
     }
