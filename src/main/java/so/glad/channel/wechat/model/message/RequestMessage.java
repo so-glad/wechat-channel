@@ -1,8 +1,6 @@
 package so.glad.channel.wechat.model.message;
 
 import com.google.common.base.Objects;
-import com.sun.xml.internal.txw2.annotation.XmlCDATA;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -30,7 +28,7 @@ public class RequestMessage extends WechatMessage {
     public String getContent() {
         return content;
     }
-    @XmlCDATA
+
     public void setContent(String content) {
         this.content = content;
     }
